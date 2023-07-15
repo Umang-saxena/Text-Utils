@@ -53,3 +53,8 @@ Navbar.propTypes = {
   title: PropTypes.string,
   aboutText: PropTypes.string
 }
+// Important for debugging a complex App 
+Navbar.defaultProps={
+  title:"Drop your Title Here",
+  aboutText:"What is ur app about"
+}
