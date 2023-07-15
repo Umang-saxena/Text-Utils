@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <>
-    <Navbar/>
+    <Navbar title="Text Utils" aboutText="About App"/>
     </>
   );
 }
