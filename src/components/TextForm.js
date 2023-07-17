@@ -16,6 +16,10 @@ export default function TextForm(props) {
     const handleOnChange=(event)=>{
         setText(event.target.value); //Always an event object is returned and we write this so that we are able to changed valueof this text area of the text hat we have entered
     }
+    const handleTextClear=()=>{
+        let newText="";
+        setText(newText);
+    }
     return (
         <>
         <div className="container">
@@ -31,6 +35,7 @@ export default function TextForm(props) {
             </div>
             <button className="btn btn-primary" onClick={handleUpClick} >Convert to Uppercase</button>
             <button className="btn btn-primary mx-3" onClick={handleLowClick} >Convert to Lowercase</button>
+            <button className="btn btn-primary mx-3" onClick={handleTextClear} >Clear Text</button>
         </div>
         <div className="container my-4">
             <h1>Text Summary</h1>
