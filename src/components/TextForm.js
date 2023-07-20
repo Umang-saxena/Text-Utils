@@ -20,10 +20,17 @@ export default function TextForm(props) {
         let newText="";
         setText(newText);
     }
+    const handleCopyText=()=>{
+        var copyText = document.getElementById("exampleFormControlTextarea1");
+        copyText.select();
+        // copyText.setSelectionRange(0, 99999); // For mobile devices
+        navigator.clipboard.writeText(copyText.value);
+    }
+
     return (
         <>
         <div className="container">
-            <h1>{props.heading}</h1>
+            <h1 className={`text-${props.mode==='light'?'dark':'light'}`}>{props.heading}</h1>
             <div className="mb-3">
                 <textarea
                     className="form-control"
@@ -36,17 +43,19 @@ export default function TextForm(props) {
             <button className="btn btn-primary" onClick={handleUpClick} >Convert to Uppercase</button>
             <button className="btn btn-primary mx-3" onClick={handleLowClick} >Convert to Lowercase</button>
             <button className="btn btn-primary mx-3" onClick={handleTextClear} >Clear Text</button>
+            <button className="btn btn-primary mx-3" onClick={handleCopyText} >Copy Text</button>
         </div>
-        <div className="container my-4">
-            <h1>Text Summary</h1>
-            <p> Your text has {text.split(" ").length} words and {text.length} characters in it.</p>
-            <p> {0.008 * text.split(" ").length} Minutes to read the complete text</p>
-            <h2>Preview Text</h2>
-            <p>{text}</p>
+        <div className="container my-4 ">
+            <h1 className={`text-${props.mode==='light'?'dark':'light'}`}>Text Summary</h1>
+            <p className={`text-${props.mode==='light'?'dark':'light'}`}> Your text has {text.split(" ").length} words and {text.length} characters in it.</p>
+            <p className={`text-${props.mode==='light'?'dark':'light'}`}> {0.008 * text.split(" ").length} Minutes to read the complete text</p>
+            <h2 className={`text-${props.mode==='light'?'dark':'light'}`}>Preview Text</h2>
+            <p className={`text-${props.mode==='light'?'dark':'light'}`}>{text}</p>
         </div>
         </>
     );
 }
 TextForm.propTypes = {
     heading: PropTypes.string,
+    mode:PropTypes.string
 };

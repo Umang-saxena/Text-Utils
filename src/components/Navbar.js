@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 
 
 export default function Navbar(props) {
+  // "navbar navbar-expand-lg bg-body-tertiary"
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={`${props.mode}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           {props.title}
@@ -34,16 +35,21 @@ export default function Navbar(props) {
             </li>
           </ul>
         </div>
+        <div class={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+          <input class="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+          <label class="form-check-label" htmlFor="flexSwitchCheckDefault">{`Enable ${props.mode==='light'?'Dark':'Light'} Mode`}</label>
+        </div>
       </div>
     </nav>
   );
 }
 Navbar.propTypes = {
   title: PropTypes.string,
-  aboutText: PropTypes.string
+  aboutText: PropTypes.string,
+  mode:PropTypes.string
 }
 // Important for debugging a complex App 
-Navbar.defaultProps={
-  title:"Drop your Title Here",
-  aboutText:"What is ur app about"
+Navbar.defaultProps = {
+  title: "Drop your Title Here",
+  aboutText: "What is ur app about"
 }
