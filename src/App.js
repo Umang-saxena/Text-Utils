@@ -2,7 +2,8 @@ import './App.css';
 import TextForm from './components/TextForm';
 import Navbar from './components/Navbar';
 import { useState } from 'react';
-// import About from './components /About';
+import About from './components/About';
+import { BrowserRouter,Route,Routes} from "react-router-dom";
 
 function App() {
   const [mode,setMode]=useState('light');
@@ -18,13 +19,17 @@ function App() {
   }
   
   return (
-    <>
+    <BrowserRouter>
     <Navbar title="Text Utils" aboutText="About App" mode={mode} toggleMode={toggleMode}/>
     <div className="container my-3">
-    <TextForm heading="Enter the text to analyse" mode={mode}/>
-    {/* <About/> */}
     </div>
-    </>
+      <Routes>
+        <Route path='/' element={<TextForm heading="Enter the text to analyse" mode={mode}/>} >
+        </Route>
+        <Route path='/about' element={<About/>}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
