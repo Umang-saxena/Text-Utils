@@ -50,7 +50,7 @@ export default function TextForm(props) {
             <p className={`text-${props.mode==='light'?'dark':'light'}`}> Your text has {text.split(" ").length} words and {text.length} characters in it.</p>
             <p className={`text-${props.mode==='light'?'dark':'light'}`}> {0.008 * text.split(" ").length} Minutes to read the complete text</p>
             <h2 className={`text-${props.mode==='light'?'dark':'light'}`}>Preview Text</h2>
-            <p className={`text-${props.mode==='light'?'dark':'light'}`}>{text}</p>
+            <p className={`text-${props.mode==='light'?'dark':'light'}`}>{text.length>0 ? text : "Enter Text to Preview Text here"}</p>
         </div>
         </>
     );
