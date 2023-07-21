@@ -24,8 +24,8 @@ function App() {
     <div className="container my-3">
     </div>
       <Routes>
-        <Route path='/' element={<TextForm heading="Enter the text to analyse" mode={mode}/>} />
-        <Route path='about' element={<About mode={mode}/>}/>
+        <Route exact path='/' element={<TextForm heading="Enter the text to analyse" mode={mode}/>} />
+        <Route exact path='about' element={<About mode={mode}/>}/>
       </Routes>
     </BrowserRouter>
   );
