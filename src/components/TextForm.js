@@ -40,10 +40,10 @@ export default function TextForm(props) {
                     rows="8"
                 ></textarea>
             </div>
-            <button className="btn btn-primary" onClick={handleUpClick} >Convert to Uppercase</button>
-            <button className="btn btn-primary mx-3" onClick={handleLowClick} >Convert to Lowercase</button>
-            <button className="btn btn-primary mx-3" onClick={handleTextClear} >Clear Text</button>
-            <button className="btn btn-primary mx-3" onClick={handleCopyText} >Copy Text</button>
+            <button className="btn btn-primary mx-3 my-3" onClick={handleUpClick} >Convert to Uppercase</button>
+            <button className="btn btn-primary mx-3 my-3" onClick={handleLowClick} >Convert to Lowercase</button>
+            <button className="btn btn-primary mx-3 my-3" onClick={handleTextClear} >Clear Text</button>
+            <button className="btn btn-primary mx-3 my-3" onClick={handleCopyText} >Copy Text</button>
         </div>
         <div className="container my-4 ">
             <h1 className={`text-${props.mode==='light'?'dark':'light'}`}>Text Summary</h1>
