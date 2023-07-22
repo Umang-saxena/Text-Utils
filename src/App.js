@@ -24,7 +24,7 @@ function App() {
     <div className="container my-3">
     </div>
       <Routes>
-        <Route exact path='/' element={<TextForm heading="Enter the text to Analyse" mode={mode}/>} />
+        <Route exact path='/' element={<TextForm heading="Try TextUtils - Word Counter,Character Counter , Remove extra spaces " mode={mode}/>} />
         <Route exact path='about' element={<About mode={mode}/>}/>
       </Routes>
     </BrowserRouter>
