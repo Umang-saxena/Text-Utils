@@ -47,10 +47,10 @@ export default function TextForm(props) {
         </div>
         <div className="container my-4 ">
             <h1 className={`text-${props.mode==='light'?'dark':'light'}`}>Text Summary</h1>
-            <p className={`text-${props.mode==='light'?'dark':'light'}`}> Your text has {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.split(" ").filter((element)=>{return element!==''}).length} characters in it.</p>
-            <p className={`text-${props.mode==='light'?'dark':'light'}`}> {0.008 * text.split(" ").filter((element)=>{return element==" "}) .length} Minutes to read the complete text</p>
+            <p className={`text-${props.mode==='light'?'dark':'light'}`}> Your text has {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.split("").length} characters in it.</p>
+            <p className={`text-${props.mode==='light'?'dark':'light'}`}> {0.008 * text.split(" ").filter((element)=>{return element===" "}).length} Minutes to read the complete text</p>
             <h2 className={`text-${props.mode==='light'?'dark':'light'}`}>Preview Text</h2>
-            <p className={`text-${props.mode==='light'?'dark':'light'}`}>{text.split(" ").filter((element)=>{return element==" "}).length>0 ? text : "Nothing to Preview"}</p>
+            <p className={`text-${props.mode==='light'?'dark':'light'}`}>{text.split(" ").filter((element)=>{return element===" "}).length>0 ? text : "Nothing to Preview"}</p>
         </div>
         </>
     );
